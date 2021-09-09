@@ -1,0 +1,258 @@
+body {
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+  background-color: #648CFF;
+}
+
+main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+main .main-block h3 {
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  width: 300px;
+  height: 30px;
+  top: 70px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+main .main-block .calendar {
+  position: absolute;
+  width: 900px;
+  height: 625px;
+  background-color: #fff;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+main .main-block .calendar .yearMonth {
+  font-size: 25px;
+  width: 400px;
+  text-align: center;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+main .main-block .calendar button.back,
+main .main-block .calendar button.next {
+  background-color: #648CFF;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: none;
+  z-index: 1;
+}
+main .main-block .calendar button.back:hover,
+main .main-block .calendar button.next:hover {
+  background-color: royalblue;
+  cursor: pointer;
+  color: #ccc;
+}
+main .main-block .calendar button.back {
+  top: 20px;
+}
+main .main-block .calendar button.next {
+  top: 575px;
+}
+
+main .main-block .calendar table {
+  position: absolute;
+  width: 700px;
+  height: 400px;
+  top: 90px;
+  bottom: 45px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  border-spacing: 10px;
+  border-collapse: separate;
+  color: #000;
+}
+main .main-block .calendar table tbody tr td{
+  width: 100px;
+  height: 55px;
+  background-color: #fff;
+  font-size: 20px;
+  text-align: center
+}
+main .main-block .calendar table tbody tr td .frontSide{
+  height: 55px;
+}
+main .main-block .calendar table tbody tr td span {
+  line-height: 55px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+main .main-block .calendar table tbody tr td.day:hover .frontSide{
+  background-color: royalblue;
+  color: #fff;
+  cursor: pointer;
+}
+main .main-block .calendar table tbody tr:first-child td:hover .frontSide{
+  background-color: #fff;
+  color: #000;
+  cursor: unset;
+}
+main .main-block .calendar table tbody tr td .backSide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  backface-visibility: hidden;
+  transform: rotateX(-180deg);
+  background-color: royalblue;
+  width: 700px;
+  height: 450px;
+}
+main .main-block .calendar table tbody tr td .backSide.convert {
+  position: absolute;
+  transition: .3s;
+  transform: perspective(1000px) rotateX(0deg);
+  margin: 0;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backMain {
+  position: absolute;
+  color: #fff;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backMain:hover {
+  color: #ccc;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel {
+  position: absolute;
+  height: 440px;
+  width: 610px;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel .plusBtn {
+  position: absolute;
+  color: #000;
+  font-size: 30px;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  left: 0;
+  right: 0;
+  top: 40px;
+  margin: auto;
+  z-index: 1;
+  cursor: pointer;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel .plusBtn.focused {
+  display: none;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel .search {
+  position: absolute;
+  border: #000 solid 3px;
+  color: #000;
+  display: table-cell;
+  vertical-align: middle;
+  background-color:#fff;
+  width: 40px;
+  height: 40px;
+  top:40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 25px;
+  font-weight: 500;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel .search.focused {
+  width: 500px;
+  transition: .3s;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel ul {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  top: 90px;
+  width: 600px;
+  height: 440px;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel ul ul {
+  display: none;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel ul li {
+  position: relative;
+  display: inline-block;
+  border: #000 solid 3px;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 34px;
+  width: 600px;
+  height: 40px;
+  left: 0;
+  right: 0;
+  margin: 20px auto;
+  background-color: #fff;
+  transition: .5s;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel ul li p {
+  line-height: 34px;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel ul li p.checked{
+  text-decoration: line-through;
+  color: royalblue;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel ul li .deleteBtn{
+  position: absolute;
+  font-weight: 700;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel ul li .deleteBtn:hover {
+  color: red;
+  font-size: 23px;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel ul li .checkBtn {
+  position: absolute;
+  font-size: 23px;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+main .main-block .calendar table tbody tr td .backSide.convert .backPannel ul li .checkBtn:hover {
+  color: green;
+  font-size: 25px;
+}
